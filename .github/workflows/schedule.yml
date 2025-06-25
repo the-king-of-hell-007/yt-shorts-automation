@@ -1,0 +1,15 @@
+name: Run YouTube Shorts Automation
+
+on:
+  schedule:
+    - cron: '30 11 * * 2,5'  # Tuesday & Friday at 5PM IST
+    - cron: '30 4 * * 6,0'   # Saturday & Sunday at 10AM IST
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Colab notebook
+        uses: rickstaa/action-run-colab@v1
+        with:
+          notebook-path: https://colab.research.google.com/github/the-king-of-hell-007/yt-shorts-automation/blob/main/final%20shorts%20automation%20setup.ipynb
